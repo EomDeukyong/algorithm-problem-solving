@@ -13,12 +13,8 @@ class Solution {
         }
         for(int i=0; i<dungeons.length;i++){
             if(!visited[i] && dungeons[i][0]<=current){
-                count++;
-                current=current-dungeons[i][1];
                 visited[i]=true;
-                dfs(visited,current,count,dungeons);
-                count--;
-                current=current+dungeons[i][1];
+                dfs(visited,current-dungeons[i][1],count+1,dungeons);
                 visited[i]=false;
             } 
         }
