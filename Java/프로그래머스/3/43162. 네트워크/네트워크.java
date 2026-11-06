@@ -13,13 +13,13 @@ class Solution {
                 visit[i]=true;
                 answer+=1;
                 // stack.clear();
-                stack.offer(i);
+                stack.push(i);
                 while(!stack.isEmpty()){
-                    int current_com=stack.poll();
+                    int current_com=stack.pop();
                     for(int j=0;j<n;j++){
                         if(!visit[j] && computers[current_com][j]==1){
                             visit[j]=true;
-                            stack.offer(j);
+                            stack.push(j);
                         }
                     }
                 }
